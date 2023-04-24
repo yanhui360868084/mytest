@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p v-cloak>今日は{{msg1}}を勉強します。</p>
+
+        <h2 v-text="msg1">Vue.jsで俺を取り替える</h2>
+    
+        <div v-text="msg2"></div>
+
+        <div v-html="msg3"></div>
+      
+        <input type="button" value="ボタン1" v-bind:title="mytitle">
+        <input type="button" value="ボタン2" v-on:click="show">
+        <input type="button" value="ボタン3" @click="show">
+    </div>
+    <script src="./lib/vue.min.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',  //当我们new的这个vue实例，要控制页面的哪个区域
+            data:{  //data属性中，存放的是el要用到的数据
+                msg1:' Vue.js ',
+                msg2:'<h1>v-textはタグが表示されます。</h1>',
+                msg3:'<h1>v-htmlはタグが表示されない。</h1>',
+                mytitle:'これはタイトルです'
+            },
+            methods:{
+                show:function(){
+                    alert('Hello')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

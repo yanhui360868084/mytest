@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lib/vue.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>当前计数：{{count}}</h2>
+        <!-- <button v-on:click="count++">+</button>
+        <button v-on:click="count--">-</button> -->
+
+        <button v-on:click="add">+</button>
+        <button v-on:click="sub">-</button>
+        <button @click="sub">-</button>
+    </div>
+    <script>
+        const app = new Vue({
+            el:'#app', //用于挂载要管理的元素
+            data:{ 
+                count: 0,
+            },
+            methods: {
+                add: function(){
+                    if(this.count == 10){
+                        return;
+                    }
+                    this.count++
+                    console.log('add被执行');
+                },
+                sub: function(){
+                    if(this.count == 0){
+                        return;
+                    }
+                    this.count--
+                    console.log('sub被执行');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

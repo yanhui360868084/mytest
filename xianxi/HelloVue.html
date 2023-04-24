@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#app',  //当我们new的这个vue实例，要控制页面的哪个区域
+            data:{  //data属性中，存放的是el要用到的数据
+                msg:'こんにちは'
+            }
+        })
+    </script>
+</body>
+</html>
